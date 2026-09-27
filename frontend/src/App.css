@@ -582,3 +582,14 @@ body {
     padding: 8px 4px;
   }
 }
+
+/* Respect the user's reduced-motion preference: keep the toast and spinner
+   from animating while leaving their layout and meaning unchanged. */
+@media (prefers-reduced-motion: reduce) {
+  .toast {
+    animation: none;
+  }
+  .spinner {
+    animation: none;
+  }
+}
