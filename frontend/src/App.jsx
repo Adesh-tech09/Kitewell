@@ -795,8 +795,11 @@ export default function App() {
 
               <form onSubmit={handleTrust} className="form">
                 <h3 className="subhead">Add trustline</h3>
-                <label className="label">Asset code</label>
+                <label className="label" htmlFor="trust-asset-code">
+                  Asset code
+                </label>
                 <input
+                  id="trust-asset-code"
                   className="input"
                   value={trustForm.code}
                   onChange={(e) => setTrustForm({ ...trustForm, code: e.target.value })}
@@ -804,16 +807,22 @@ export default function App() {
                   maxLength={12}
                   required
                 />
-                <label className="label">Issuer</label>
+                <label className="label" htmlFor="trust-issuer">
+                  Issuer
+                </label>
                 <input
+                  id="trust-issuer"
                   className="input"
                   value={trustForm.issuer}
                   onChange={(e) => setTrustForm({ ...trustForm, issuer: e.target.value })}
                   placeholder="G…"
                   required
                 />
-                <label className="label">Limit</label>
+                <label className="label" htmlFor="trust-limit">
+                  Limit
+                </label>
                 <input
+                  id="trust-limit"
                   className="input"
                   type="number"
                   min="0"
@@ -846,8 +855,11 @@ export default function App() {
                 submits to Horizon Testnet.
               </p>
               <form onSubmit={handleSend} className="form">
-                <label className="label">Destination</label>
+                <label className="label" htmlFor="send-destination">
+                  Destination
+                </label>
                 <input
+                  id="send-destination"
                   className="input"
                   type="text"
                   placeholder="G…"
@@ -855,8 +867,11 @@ export default function App() {
                   onChange={(e) => setSendForm({ ...sendForm, destination: e.target.value })}
                   required
                 />
-                <label className="label">Asset</label>
+                <label className="label" htmlFor="send-asset">
+                  Asset
+                </label>
                 <select
+                  id="send-asset"
                   className="input"
                   value={sendForm.assetKey}
                   onChange={(e) => setSendForm({ ...sendForm, assetKey: e.target.value })}
@@ -873,10 +888,11 @@ export default function App() {
                       </option>
                     ))}
                 </select>
-                <label className="label">
+                <label className="label" htmlFor="send-amount">
                   Amount ({selectedSendAsset?.code ?? "XLM"})
                 </label>
                 <input
+                  id="send-amount"
                   className="input"
                   type="number"
                   step="0.0000001"
@@ -886,8 +902,11 @@ export default function App() {
                   onChange={(e) => setSendForm({ ...sendForm, amount: e.target.value })}
                   required
                 />
-                <label className="label">Memo type</label>
+                <label className="label" htmlFor="send-memo-type">
+                  Memo type
+                </label>
                 <select
+                  id="send-memo-type"
                   className="input"
                   value={sendForm.memoType}
                   onChange={(e) =>
@@ -902,8 +921,11 @@ export default function App() {
                   <option value="id">ID</option>
                   <option value="hash">Hash</option>
                 </select>
-                <label className="label">Memo (optional)</label>
+                <label className="label" htmlFor="send-memo">
+                  Memo (optional)
+                </label>
                 <input
+                  id="send-memo"
                   className="input"
                   type="text"
                   maxLength={memoField.maxLength}
